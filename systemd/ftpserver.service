@@ -1,0 +1,13 @@
+[Unit]
+Description=FTPServer
+After=network.target
+Wants=network.target
+
+[Service]
+# This service runs as root. You may consider to run it as another user for security concerns.
+Type=simple
+ExecStart=/usr/local/bin/ftpserver
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
